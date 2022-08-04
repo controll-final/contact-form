@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {ContainerForm, FormContainer, InputForm, TextAreaForm, ButtonForm} from './FormContatoCss';
-//import "./FormContato.css";
+import styles from './styles.css';
+
 
 // import { Container } from './styles';
 
@@ -16,24 +16,24 @@ const FormContato: React.FC = () => {
   }
 
   return (
-    <ContainerForm>
-      <FormContainer onSubmit={HandleForm}>
+    <div className={styles.containerForm}>
+      <form className={styles.formContainer} onSubmit={HandleForm}>
         <br />
-        <InputForm type="text" value={nome} placeholder="Nome" onChange={({target}) => {
+        <input className={styles.inputForm} type="text" value={nome} placeholder="Nome" onChange={({target}) => {
           setNome(target.value)
         }}/>
         <br />
-        <InputForm type="email" value={email} placeholder="Email" onChange={({target}) => {
+        <input className={styles.inputForm} type="email" value={email} placeholder="Email" onChange={({target}) => {
           setEmail(target.value) 
         }}/>
         <br />
-        <TextAreaForm value={textarea} placeholder="Mensagem" onChange={({target}) => {
+        <textarea className={styles.textAreaForm} value={textarea} placeholder="Mensagem" onChange={({target}) => {
           setTextarea(target.value)
         }}/>
         <br />
-        <ButtonForm type="submit">Enviar</ButtonForm>
-      </FormContainer>
-    </ContainerForm> 
+        <button className={styles.buttonForm} type="submit">Enviar</button>
+      </form>
+    </div> 
   )
   
 }
