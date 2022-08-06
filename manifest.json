@@ -1,7 +1,7 @@
 {
   "vendor": "controll",
   "name": "contact-me",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "title": "Contact Form",
   "description": "Formulário para que o cliente da Bee In Controll contate a empresa.",
   "builders": {

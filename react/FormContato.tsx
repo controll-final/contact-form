@@ -15,23 +15,32 @@ const FormContato: React.FC = () => {
     console.log(nome, email, textarea)
   }
 
+  function CadastrarUsuario(event:React.FormEvent){
+
+    if(nome && email && textarea != ''){
+      event.preventDefault()
+      alert("Agradecemos o seu contato e logo responderemos você!")
+    }
+    
+  }
+
   return (
     <ContainerForm>
       <FormContainer onSubmit={HandleForm}>
         <br />
         <InputForm type="text" value={nome} placeholder="Nome" onChange={({target}) => {
           setNome(target.value)
-        }}/>
+        }} required />
         <br />
         <InputForm type="email" value={email} placeholder="Email" onChange={({target}) => {
           setEmail(target.value) 
-        }}/>
+        }} required />
         <br />
         <TextAreaForm value={textarea} placeholder="Mensagem" onChange={({target}) => {
           setTextarea(target.value)
-        }}/>
+        }} required/>
         <br />
-        <ButtonForm type="submit">Enviar</ButtonForm>
+        <ButtonForm type="submit" onClick={CadastrarUsuario}>Enviar</ButtonForm>
       </FormContainer>
     </ContainerForm> 
   )
